@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body { @apply bg-white text-navy-900 font-sans; overflow-x: hidden; }
+  ::selection { @apply bg-orange text-white; }
+}
+
+@layer components {
+  .container-x { @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12; }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-orange text-white font-semibold rounded-lg
+           hover:bg-orange-dark transition-colors duration-200 cursor-pointer
+           shadow-[0_10px_30px_-12px_rgba(249,115,22,0.6)] hover:shadow-[0_15px_40px_-12px_rgba(249,115,22,0.85)];
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 border-2 border-white/70 text-white font-semibold rounded-lg
+           hover:bg-white hover:text-navy-700 transition-colors duration-200 cursor-pointer backdrop-blur-sm;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 text-navy-700 font-medium hover:text-orange transition-colors duration-200 cursor-pointer;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
+  }
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_10px_40px_-10px_rgba(15,34,56,0.15)];
+  }
+  .glass-dark { @apply bg-navy-900/40 backdrop-blur-xl border border-white/10; }
+  .badge-pro { @apply chip bg-gold/15 text-gold-dark border border-gold/30; }
+  .badge-new { @apply chip bg-orange/15 text-orange-dark border border-orange/30; }
+  .badge-hot { @apply chip bg-sparkred/15 text-sparkred border border-sparkred/30; }
+  .h-display { @apply font-display tracking-wide; }
+  .num-mono { @apply font-mono tabular-nums; }
+}
+
+.brand-gradient-radial {
+  background:
+    radial-gradient(60% 60% at 80% 10%, rgba(249,115,22,0.18) 0%, transparent 60%),
+    radial-gradient(50% 50% at 15% 90%, rgba(251,191,36,0.15) 0%, transparent 60%),
+    linear-gradient(135deg, #050b14 0%, #0a1626 50%, #142e49 100%);
+}
+.diamond-stripe {
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 6px, transparent 6px 12px);
+}
+.text-shadow-deep { text-shadow: 0 6px 30px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.1); }
+.metal-text {
+  background: linear-gradient(180deg, #fde68a 0%, #fbbf24 35%, #b45309 60%, #fbbf24 80%, #fef3c7 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 1px rgba(0,0,0,0.2));
+}
+.shimmer-bar {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.grid-deco {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f3f4f6; }
+::-webkit-scrollbar-thumb { background: #1a3a5c; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #f97316; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
