@@ -10,6 +10,7 @@ const BADGE_CLASS: Record<string, string> = {
   'EXTRA FINO': 'badge-new',
   NOVO: 'badge-new',
   TOP: 'badge-hot',
+  SILENCIOSO: 'badge-pro',
 };
 
 export default function Produtos() {
@@ -116,9 +117,17 @@ function ProductCard({ product, onAdd }: { product: Product; onAdd: () => void }
           }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="transition-transform duration-700 group-hover:scale-110 group-hover:rotate-180">
-            <DiscIcon accent={product.accent} rim={product.rim} size={220} />
-          </div>
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-contain bg-white/5 p-3 transition-transform duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <div className="transition-transform duration-700 group-hover:scale-110 group-hover:rotate-180">
+              <DiscIcon accent={product.accent} rim={product.rim} size={220} />
+            </div>
+          )}
         </div>
 
         {/* Top badges */}
@@ -135,10 +144,12 @@ function ProductCard({ product, onAdd }: { product: Product; onAdd: () => void }
           )}
         </div>
 
-        {/* Diameter tag */}
-        <div className="absolute top-3 right-3 chip bg-white/95 text-navy-900 border border-white">
-          Ø {product.diameterMm}mm
-        </div>
+        {/* Diameter tag (oculto para itens sem diâmetro, ex: químicos) */}
+        {product.diameterMm > 0 && (
+          <div className="absolute top-3 right-3 chip bg-white/95 text-navy-900 border border-white">
+            Ø {product.diameterMm}mm
+          </div>
+        )}
       </div>
 
       {/* Info */}
