@@ -54,9 +54,9 @@ export default function Footer() {
             </p>
 
             <div className="mt-6 space-y-2.5">
-              <a href="tel:+5511999999999" className="flex items-center gap-3 text-white/80 hover:text-orange transition-colors cursor-pointer text-sm">
+              <a href="tel:+5562999650412" className="flex items-center gap-3 text-white/80 hover:text-orange transition-colors cursor-pointer text-sm">
                 <Phone size={15} className="text-orange" />
-                (11) 99999-9999
+                (62) 9 9965-0412
               </a>
               <a href="mailto:contato@unifortabrasivos.com.br" className="flex items-center gap-3 text-white/80 hover:text-orange transition-colors cursor-pointer text-sm">
                 <Mail size={15} className="text-orange" />

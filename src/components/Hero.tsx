@@ -59,7 +59,7 @@ export default function Hero() {
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5562999650412"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"

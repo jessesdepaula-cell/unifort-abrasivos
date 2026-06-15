@@ -158,14 +158,14 @@ export default function Portfolio() {
     const text = encodeURIComponent(
       `Olá UNIFORT! Gostaria de solicitar um orçamento para o item "${productName}" da linha de "${categoryName}".`
     );
-    return `https://wa.me/556299650412?text=${text}`;
+    return `https://wa.me/5562999650412?text=${text}`;
   };
 
   const getGeneralQuoteLink = () => {
     const text = encodeURIComponent(
       `Olá UNIFORT! Gostaria de falar com um consultor para tirar dúvidas e solicitar cotações de materiais.`
     );
-    return `https://wa.me/556299650412?text=${text}`;
+    return `https://wa.me/5562999650412?text=${text}`;
   };
 
   return (

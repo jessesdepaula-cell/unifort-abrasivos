@@ -17,7 +17,7 @@ export default function CartDrawer() {
     const msg = `Olá UNIFORT! Quero fechar este pedido:%0A%0A${lines}%0A%0ATotal: ${brl(
       total()
     )}`;
-    window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
+    window.open(`https://wa.me/5562999650412?text=${msg}`, '_blank');
   };
 
   return (
