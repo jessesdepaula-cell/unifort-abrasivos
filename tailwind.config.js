@@ -18,16 +18,20 @@ export default {
           950: '#050b14',
         },
         royal: '#2563eb',
+        // Paleta da marca: azul + branco apenas.
+        // Mantemos os nomes "orange", "gold", "sparkred" como tokens semanticos
+        // (accent primario, secundario, destaque) para evitar refator amplo,
+        // mas todas as cores agora sao tons de azul.
         orange: {
-          DEFAULT: '#f97316',
-          dark: '#c2410c',
-          light: '#fb923c',
+          DEFAULT: '#2563eb',
+          dark: '#1d4ed8',
+          light: '#60a5fa',
         },
         gold: {
-          DEFAULT: '#fbbf24',
-          dark: '#d97706',
+          DEFAULT: '#38bdf8',
+          dark: '#0284c7',
         },
-        sparkred: '#dc2626',
+        sparkred: '#1e3a8a',
       },
       fontFamily: {
         display: ['"Bebas Neue"', 'Impact', 'sans-serif'],
@@ -52,8 +56,8 @@ export default {
           '100%': { backgroundPosition: '200% 0' },
         },
         pulseGlow: {
-          '0%,100%': { boxShadow: '0 0 30px rgba(249,115,22,0.3)' },
-          '50%': { boxShadow: '0 0 60px rgba(249,115,22,0.7)' },
+          '0%,100%': { boxShadow: '0 0 30px rgba(37,99,235,0.3)' },
+          '50%': { boxShadow: '0 0 60px rgba(37,99,235,0.7)' },
         },
         sparkRise: {
           '0%': { transform: 'translateY(20px) scale(0.5)', opacity: '0' },

@@ -108,11 +108,11 @@ function ProductCard({ product, onAdd }: { product: Product; onAdd: () => void }
           style={{
             background:
               product.accent === 'orange'
-                ? 'radial-gradient(circle, #f97316 0%, transparent 65%)'
+                ? 'radial-gradient(circle, #2563eb 0%, transparent 65%)'
                 : product.accent === 'gold'
-                ? 'radial-gradient(circle, #fbbf24 0%, transparent 65%)'
+                ? 'radial-gradient(circle, #38bdf8 0%, transparent 65%)'
                 : product.accent === 'red'
-                ? 'radial-gradient(circle, #dc2626 0%, transparent 65%)'
+                ? 'radial-gradient(circle, #1e3a8a 0%, transparent 65%)'
                 : 'radial-gradient(circle, #2563eb 0%, transparent 65%)',
           }}
         />

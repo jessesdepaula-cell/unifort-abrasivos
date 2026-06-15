@@ -24,14 +24,14 @@ function DiscBody() {
         />
       </mesh>
 
-      {/* Orange branded face */}
+      {/* Blue branded face */}
       <mesh position={[0, 0.035, 0]}>
         <cylinderGeometry args={[1.55, 1.55, 0.005, 96]} />
         <meshStandardMaterial
-          color="#f97316"
+          color="#2563eb"
           metalness={0.6}
           roughness={0.35}
-          emissive="#f97316"
+          emissive="#2563eb"
           emissiveIntensity={0.15}
         />
       </mesh>
@@ -123,7 +123,7 @@ function Sparks() {
       </bufferGeometry>
       <pointsMaterial
         size={0.04}
-        color="#fbbf24"
+        color="#7dd3fc"
         transparent
         opacity={0.9}
         sizeAttenuation
@@ -149,8 +149,8 @@ export default function DiamondDisc3D() {
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
       />
-      <pointLight position={[-3, 1, -2]} intensity={0.8} color="#f97316" />
-      <pointLight position={[2, -1, 2]} intensity={0.5} color="#fbbf24" />
+      <pointLight position={[-3, 1, -2]} intensity={0.8} color="#2563eb" />
+      <pointLight position={[2, -1, 2]} intensity={0.5} color="#38bdf8" />
 
       <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.35}>
         <group rotation={[0.55, 0, 0]}>

@@ -18,7 +18,7 @@ export default function Hero() {
             className="absolute bottom-0 w-[3px] h-[3px] rounded-full bg-gold"
             style={{
               left: `${(i * 8 + 5) % 100}%`,
-              boxShadow: '0 0 12px 2px rgba(251,191,36,0.7)',
+              boxShadow: '0 0 12px 2px rgba(56,189,248,0.7)',
               animation: `sparkRise ${3 + (i % 4)}s linear ${i * 0.4}s infinite`,
             }}
           />

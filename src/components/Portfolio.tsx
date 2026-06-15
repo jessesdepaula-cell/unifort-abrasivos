@@ -215,7 +215,7 @@ export default function Portfolio() {
                 onClick={() => setActiveTab(cat.id)}
                 className={`flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold transition-all shrink-0 cursor-pointer border ${
                   isActive
-                    ? 'bg-orange text-white border-orange shadow-[0_8px_25px_-10px_rgba(249,115,22,0.6)]'
+                    ? 'bg-orange text-white border-orange shadow-[0_8px_25px_-10px_rgba(37,99,235,0.6)]'
                     : 'bg-white/[0.03] text-white/70 border-white/5 hover:border-white/20 hover:text-white hover:bg-white/[0.08]'
                 }`}
               >

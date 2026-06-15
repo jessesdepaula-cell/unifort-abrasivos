@@ -2,7 +2,7 @@ type Props = { variant?: 'dark' | 'light'; size?: number };
 
 export default function Logo({ variant = 'dark', size = 36 }: Props) {
   const primary = variant === 'dark' ? '#1a3a5c' : '#ffffff';
-  const accent = '#f97316';
+  const accent = '#2563eb';
   return (
     <div className="flex items-center gap-2.5">
       <svg width={size} height={size} viewBox="0 0 64 64" fill="none" aria-hidden="true">
@@ -26,7 +26,7 @@ export default function Logo({ variant = 'dark', size = 36 }: Props) {
         </div>
         <div
           className="text-[0.62rem] tracking-[0.4em] font-semibold mt-0.5"
-          style={{ color: variant === 'dark' ? '#f97316' : '#fbbf24' }}
+          style={{ color: variant === 'dark' ? '#2563eb' : '#38bdf8' }}
         >
           ABRASIVOS
         </div>

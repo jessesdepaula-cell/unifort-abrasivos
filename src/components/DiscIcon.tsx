@@ -6,9 +6,9 @@ type Props = {
 };
 
 const ACCENT_COLORS: Record<string, { face: string; ring: string; rim: string }> = {
-  orange: { face: '#f97316', ring: '#c2410c', rim: '#0f2238' },
-  gold: { face: '#fbbf24', ring: '#d97706', rim: '#1a3a5c' },
-  red: { face: '#dc2626', ring: '#991b1b', rim: '#0a1626' },
+  orange: { face: '#2563eb', ring: '#1d4ed8', rim: '#0f2238' },
+  gold: { face: '#38bdf8', ring: '#0284c7', rim: '#1a3a5c' },
+  red: { face: '#1e3a8a', ring: '#1e40af', rim: '#0a1626' },
   navy: { face: '#2563eb', ring: '#1a3a5c', rim: '#0a1626' },
 };
 
