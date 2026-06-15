@@ -1,33 +1,40 @@
-import { Target, ShieldCheck, Cog, TrendingUp } from 'lucide-react';
+import { Award, Headphones, ShieldCheck, Handshake, ShoppingBag } from 'lucide-react';
 
 const ITEMS = [
   {
-    title: 'PRECISÃO',
-    sub: 'Em cada corte',
-    icon: Target,
+    title: 'QUALIDADE SELECIONADA',
+    sub: 'Alto padrão em cada item',
+    icon: Award,
     color: 'orange',
-    desc: 'Tolerância milimétrica. Acabamento que dispensa retrabalho.',
+    desc: 'Produtos rigorosamente selecionados com alto padrão de qualidade e durabilidade.',
   },
   {
-    title: 'QUALIDADE',
-    sub: 'Que gera confiança',
-    icon: ShieldCheck,
+    title: 'ATENDIMENTO',
+    sub: 'Ágil e especializado',
+    icon: Headphones,
     color: 'navy',
-    desc: 'Liga LSM testada em produção contínua e ensaios laboratoriais.',
+    desc: 'Equipe técnica preparada para indicar a solução certa, com agilidade no orçamento e na entrega.',
   },
   {
-    title: 'DESEMPENHO',
-    sub: 'Que faz a diferença',
-    icon: Cog,
+    title: 'SEGURANÇA & PRODUTIVIDADE',
+    sub: 'Compromisso com o cliente',
+    icon: ShieldCheck,
     color: 'gold',
-    desc: 'Mais peças cortadas por disco. Menos paradas na obra.',
+    desc: 'Foco total na segurança do operador e na produtividade da sua obra ou marmoraria.',
   },
   {
-    title: 'RESULTADOS',
-    sub: 'Que constroem o futuro',
-    icon: TrendingUp,
+    title: 'PARCERIAS SÓLIDAS',
+    sub: 'Fornecedores confiáveis',
+    icon: Handshake,
     color: 'red',
-    desc: 'ROI comprovado por marmorarias e construtoras parceiras.',
+    desc: 'Relações sólidas com fornecedores de referência garantem continuidade e padrão no estoque.',
+  },
+  {
+    title: 'VENDAS ONLINE',
+    sub: 'Mais praticidade e rapidez',
+    icon: ShoppingBag,
+    color: 'orange',
+    desc: 'Expansão para o digital: compre com mais facilidade, agilidade e rastreio em todo o Brasil.',
   },
 ] as const;
 
@@ -44,35 +51,36 @@ export default function Diferenciais() {
       <div className="container-x">
         <div className="max-w-2xl">
           <span className="chip bg-navy-50 text-navy-600 border border-navy-100">
-            POR QUE UNIFORT
+            POR QUE UNIFORTE
           </span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl text-navy-900 tracking-wide">
-            FORÇA, FOCO E ENGENHARIA
-            <span className="block text-orange">EM CADA SEGMENTO.</span>
+            DIFERENCIAIS QUE GERAM
+            <span className="block text-orange">RESULTADO REAL.</span>
           </h2>
           <p className="mt-4 text-navy-700/80 text-lg leading-relaxed">
-            Comece o dia com foco, trabalhe com precisão e entregue resultados.
-            Os quatro pilares que sustentam cada disco que sai da nossa linha.
+            Cinco pilares que sustentam nossa relação com profissionais, marmorarias e
+            indústrias — do estoque selecionado à entrega ágil na sua porta.
           </p>
         </div>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {ITEMS.map(({ title, sub, icon: Icon, color, desc }, idx) => {
             const c = COLOR_MAP[color];
+            const total = ITEMS.length.toString().padStart(2, '0');
             return (
               <div
                 key={title}
                 className={`group relative rounded-2xl bg-white border border-navy-100 p-6 transition-all duration-300 cursor-pointer ring-1 ring-transparent hover:-translate-y-1 hover:shadow-[0_25px_50px_-20px_rgba(15,34,56,0.35)] ${c.ring}`}
               >
                 <div className="num-mono text-xs text-navy-300 absolute top-4 right-5">
-                  0{idx + 1}/04
+                  0{idx + 1}/{total}
                 </div>
                 <div
                   className={`w-14 h-14 rounded-xl flex items-center justify-center ${c.bg} ${c.text} mb-5`}
                 >
                   <Icon size={26} strokeWidth={2.2} />
                 </div>
-                <div className="h-display text-2xl text-navy-900">{title}</div>
+                <div className="h-display text-xl text-navy-900 leading-tight">{title}</div>
                 <div className={`text-sm font-semibold ${c.text} mt-0.5`}>{sub}</div>
                 <p className="mt-4 text-navy-700/70 text-sm leading-relaxed">{desc}</p>
                 <div
