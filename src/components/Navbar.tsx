@@ -6,6 +6,8 @@ import { useCart } from '../store/cart';
 const LINKS = [
   { id: 'inicio', label: 'Início' },
   { id: 'produtos', label: 'Produtos' },
+  { id: 'portfolio', label: 'Portfólio' },
+  { id: 'galeria', label: 'Galeria' },
   { id: 'aplicacoes', label: 'Aplicações' },
   { id: 'sobre', label: 'Sobre' },
   { id: 'contato', label: 'Contato' },

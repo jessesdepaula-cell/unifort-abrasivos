@@ -9,27 +9,15 @@ const GALLERY_ITEMS = [
     aspect: 'aspect-[9/16]',
   },
   {
-    title: 'Disco Porcelanato Argacon Pro',
-    desc: 'Ficha técnica do disco turbo extra fino 110mm.',
-    src: '/images/disco-porcelanato-argacon.jpg',
-    aspect: 'aspect-[9/16]',
-  },
-  {
-    title: 'Disco Profissional LSM 350mm',
-    desc: 'Ficha técnica do disco azul para serra de bancada.',
-    src: '/images/disco-lsm-350.jpg',
-    aspect: 'aspect-[9/16]',
-  },
-  {
-    title: 'Linha Abrasivos Unifort Premium',
-    desc: 'Apresentação tridimensional do disco diamantado.',
-    src: '/images/disco-azul-premium.jpg',
-    aspect: 'aspect-square',
-  },
-  {
     title: 'Guia: Você está usando o disco certo?',
     desc: 'Fatores de impacto no acabamento e durabilidade.',
     src: '/images/banner-disco-certo.jpg',
+    aspect: 'aspect-[9/16]',
+  },
+  {
+    title: 'Promoções e Soluções Unifort',
+    desc: 'Condições especiais para marmorarias e construtoras.',
+    src: '/images/banner-promocao.jpg',
     aspect: 'aspect-[9/16]',
   },
 ];

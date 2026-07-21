@@ -117,17 +117,9 @@ function ProductCard({ product, onAdd }: { product: Product; onAdd: () => void }
           }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          {product.image ? (
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-contain bg-white/5 p-3 transition-transform duration-700 group-hover:scale-105"
-            />
-          ) : (
-            <div className="transition-transform duration-700 group-hover:scale-110 group-hover:rotate-180">
-              <DiscIcon accent={product.accent} rim={product.rim} size={220} />
-            </div>
-          )}
+          <div className="transition-transform duration-700 group-hover:scale-110 group-hover:rotate-180">
+            <DiscIcon accent={product.accent} rim={product.rim} size={220} />
+          </div>
         </div>
 
         {/* Top badges */}

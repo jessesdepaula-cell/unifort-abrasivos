@@ -20,7 +20,6 @@ export type Product = {
   accent: 'orange' | 'gold' | 'red' | 'navy';
   diameterMm: number;
   rim: 'turbo' | 'segmentado' | 'continuo' | 'turbo-fino';
-  image?: string;
 };
 
 export const PRODUCTS: Product[] = [
@@ -42,7 +41,6 @@ export const PRODUCTS: Product[] = [
     accent: 'orange',
     diameterMm: 110,
     rim: 'turbo-fino',
-    image: '/images/disco-porcelanato-argacon.jpg',
   },
   {
     id: 'uft-white-porc-110',
@@ -60,7 +58,6 @@ export const PRODUCTS: Product[] = [
     accent: 'navy',
     diameterMm: 110,
     rim: 'turbo-fino',
-    image: '/images/disco-white-porcelanato-110.jpg',
   },
   {
     id: 'uft-dourado-110',
@@ -78,7 +75,6 @@ export const PRODUCTS: Product[] = [
     accent: 'gold',
     diameterMm: 110,
     rim: 'turbo',
-    image: '/images/disco-dourado-turbo-110.jpg',
   },
   {
     id: 'uft-mg-115',
@@ -96,7 +92,6 @@ export const PRODUCTS: Product[] = [
     accent: 'navy',
     diameterMm: 115,
     rim: 'segmentado',
-    image: '/images/disco-azul-premium.jpg',
   },
   {
     id: 'uft-quartz-115',
@@ -166,7 +161,6 @@ export const PRODUCTS: Product[] = [
     accent: 'navy',
     diameterMm: 350,
     rim: 'continuo',
-    image: '/images/disco-lsm-350.jpg',
   },
   {
     id: 'uft-monster-370',
@@ -184,7 +178,6 @@ export const PRODUCTS: Product[] = [
     accent: 'navy',
     diameterMm: 370,
     rim: 'segmentado',
-    image: '/images/serra-monster-black-370.jpg',
   },
 
   // ============= IMPERMEABILIZAÇÃO =============
@@ -204,7 +197,6 @@ export const PRODUCTS: Product[] = [
     accent: 'orange',
     diameterMm: 0,
     rim: 'continuo',
-    image: '/images/impermeabilizante-h2off.jpg',
   },
 ];
 

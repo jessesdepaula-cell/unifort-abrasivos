@@ -2,6 +2,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Diferenciais from './components/Diferenciais';
 import Produtos from './components/Produtos';
+import Portfolio from './components/Portfolio';
+import Galeria from './components/Galeria';
 import Aplicacoes from './components/Aplicacoes';
 import Sobre from './components/Sobre';
 import Depoimentos from './components/Depoimentos';
@@ -18,6 +20,8 @@ export default function App() {
         <Hero />
         <Diferenciais />
         <Produtos />
+        <Portfolio />
+        <Galeria />
         <Aplicacoes />
         <Sobre />
         <Depoimentos />
