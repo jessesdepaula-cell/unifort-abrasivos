@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { ShoppingCart, Search, Filter } from 'lucide-react';
 import { PRODUCTS, CATEGORIES, type Product } from '../data/products';
 import { useCart, brl } from '../store/cart';
-import DiscIcon from './DiscIcon';
 
 const BADGE_CLASS: Record<string, string> = {
   PRO: 'badge-pro',
@@ -97,62 +96,37 @@ function ProductCard({ product, onAdd }: { product: Product; onAdd: () => void }
     : 0;
 
   return (
-    <article className="group relative rounded-2xl bg-white border border-navy-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-25px_rgba(15,34,56,0.4)]">
-      {/* Visual */}
-      <div className="relative aspect-square bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 overflow-hidden">
-        <div className="absolute inset-0 grid-deco opacity-40" />
-        <div className="absolute inset-0 diamond-stripe opacity-30" />
-        {/* Glow */}
-        <div
-          className="absolute -inset-20 blur-3xl opacity-50"
-          style={{
-            background:
-              product.accent === 'orange'
-                ? 'radial-gradient(circle, #2563eb 0%, transparent 65%)'
-                : product.accent === 'gold'
-                ? 'radial-gradient(circle, #38bdf8 0%, transparent 65%)'
-                : product.accent === 'red'
-                ? 'radial-gradient(circle, #1e3a8a 0%, transparent 65%)'
-                : 'radial-gradient(circle, #2563eb 0%, transparent 65%)',
-          }}
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="transition-transform duration-700 group-hover:scale-110 group-hover:rotate-180">
-            <DiscIcon accent={product.accent} rim={product.rim} size={220} />
+    <article className="group relative rounded-2xl bg-white border border-navy-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(15,34,56,0.15)] flex flex-col justify-between p-6">
+      <div>
+        {/* Header badges & tags */}
+        <div className="flex items-center justify-between gap-2 mb-4">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            {product.badge && (
+              <span className={BADGE_CLASS[product.badge] ?? 'badge-pro'}>
+                {product.badge}
+              </span>
+            )}
+            {discount > 0 && (
+              <span className="chip bg-sparkred text-white border border-sparkred">
+                -{discount}%
+              </span>
+            )}
           </div>
-        </div>
-
-        {/* Top badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-          {product.badge && (
-            <span className={BADGE_CLASS[product.badge] ?? 'badge-pro'}>
-              {product.badge}
-            </span>
-          )}
-          {discount > 0 && (
-            <span className="chip bg-sparkred text-white border border-sparkred">
-              -{discount}%
+          {product.diameterMm > 0 && (
+            <span className="chip bg-navy-50 text-navy-800 border border-navy-100 font-bold">
+              Ø {product.diameterMm}mm
             </span>
           )}
         </div>
 
-        {/* Diameter tag (oculto para itens sem diâmetro, ex: químicos) */}
-        {product.diameterMm > 0 && (
-          <div className="absolute top-3 right-3 chip bg-white/95 text-navy-900 border border-white">
-            Ø {product.diameterMm}mm
-          </div>
-        )}
-      </div>
-
-      {/* Info */}
-      <div className="p-5">
-        <h3 className="font-display text-xl text-navy-900 tracking-wide leading-tight">
+        {/* Title & Description */}
+        <h3 className="font-display text-xl text-navy-900 tracking-wide leading-tight group-hover:text-orange transition-colors">
           {product.name}
         </h3>
-        <p className="mt-1.5 text-sm text-navy-700/75 line-clamp-2">{product.short}</p>
+        <p className="mt-2 text-sm text-navy-700/75 leading-relaxed">{product.short}</p>
 
         {/* Specs */}
-        <div className="mt-4 grid grid-cols-2 gap-2 pb-4 border-b border-navy-100">
+        <div className="mt-5 grid grid-cols-2 gap-2.5 py-4 border-y border-navy-100 bg-navy-50/50 -mx-6 px-6">
           {product.specs.slice(0, 4).map((s) => (
             <div key={s.label} className="text-[11px]">
               <div className="text-navy-400 uppercase tracking-wider font-semibold">
@@ -162,31 +136,31 @@ function ProductCard({ product, onAdd }: { product: Product; onAdd: () => void }
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Price + CTA */}
-        <div className="mt-4 flex items-end justify-between gap-3">
-          <div>
-            {product.oldPrice && (
-              <div className="text-xs text-navy-400 line-through num-mono">
-                {brl(product.oldPrice)}
-              </div>
-            )}
-            <div className="num-mono text-2xl font-bold text-navy-900">
-              {brl(product.price)}
+      {/* Price + CTA */}
+      <div className="mt-5 flex items-end justify-between gap-3 pt-2">
+        <div>
+          {product.oldPrice && (
+            <div className="text-xs text-navy-400 line-through num-mono">
+              {brl(product.oldPrice)}
             </div>
-            <div className="text-[11px] text-navy-500">
-              ou 3x de {brl(product.price / 3)} sem juros
-            </div>
+          )}
+          <div className="num-mono text-2xl font-bold text-navy-900">
+            {brl(product.price)}
           </div>
-          <button
-            onClick={onAdd}
-            aria-label={`Comprar ${product.name}`}
-            className="btn-primary !px-4 !py-2.5 text-sm"
-          >
-            <ShoppingCart size={16} />
-            Comprar
-          </button>
+          <div className="text-[11px] text-navy-500">
+            ou 3x de {brl(product.price / 3)} sem juros
+          </div>
         </div>
+        <button
+          onClick={onAdd}
+          aria-label={`Comprar ${product.name}`}
+          className="btn-primary !px-4 !py-2.5 text-sm"
+        >
+          <ShoppingCart size={16} />
+          Comprar
+        </button>
       </div>
     </article>
   );

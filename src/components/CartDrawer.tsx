@@ -1,6 +1,5 @@
-import { X, Minus, Plus, Trash2, ShoppingBag, MessageCircle } from 'lucide-react';
+import { X, Minus, Plus, Trash2, ShoppingBag, MessageCircle, Package } from 'lucide-react';
 import { useCart, brl } from '../store/cart';
-import DiscIcon from './DiscIcon';
 
 export default function CartDrawer() {
   const { items, isOpen, close, remove, setQty, total, clear } = useCart();
@@ -81,8 +80,8 @@ export default function CartDrawer() {
                   key={product.id}
                   className="flex gap-3 p-3 rounded-xl border border-navy-100 hover:border-orange/40 transition-colors"
                 >
-                  <div className="w-20 h-20 rounded-lg bg-navy-900 shrink-0 flex items-center justify-center overflow-hidden">
-                    <DiscIcon accent={product.accent} rim={product.rim} size={72} />
+                  <div className="w-12 h-12 rounded-lg bg-navy-50 border border-navy-100 text-navy-700 shrink-0 flex items-center justify-center">
+                    <Package size={20} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2">
