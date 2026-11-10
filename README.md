@@ -26,4 +26,4 @@ npm run build    # build de produção
 
 ## Autor
 
-Desenvolvido por Jessé de Paula — [LinkedIn](https://www.linkedin.com/in/jess%C3%A9-de-paula-9136b11b0/)
+Desenvolvido por Jessé de Paula — [LinkedIn](https://www.linkedin.com/in/jessedepaula-dev/)
